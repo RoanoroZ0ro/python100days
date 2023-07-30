@@ -1,5 +1,11 @@
-#from replit import clear - part that still requires correction
 from art import logo
+import os
+import platform
+
+
+def clear():
+    command = 'cls' if platform.system().lower() == 'windows' else 'clear'
+    os.system(command)
 
 
 def add(n1, n2):
@@ -45,7 +51,7 @@ def calculator():
             num1 = answer
         else:
             should_continue = False
-            #clear()
+            clear()
             calculator()
 
 
