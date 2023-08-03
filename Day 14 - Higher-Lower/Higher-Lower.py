@@ -54,7 +54,8 @@ def game():
 
     return score
 
-
+print("mały test zmian :))")
 print(game())
+
 
 #Need to fix that code, there are several issues
