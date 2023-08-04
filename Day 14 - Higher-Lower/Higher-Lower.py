@@ -1,12 +1,11 @@
 from game_data import data
 import random
 from art import logo, vs
-
+import sys
 
 def get_data():
     selected_data = random.choice(data)
     name = selected_data["name"]
-    # follower_count = selected_data["follower_count"]
     description = selected_data["description"]
     country = selected_data["country"]
 
@@ -23,7 +22,7 @@ def compare(a, b, score):
             return score, a
         else:
             print(f"Sorry, that's wrong. Final score: {score}")
-            return False
+            return sys.exit()
     elif choice == 'B':
         if b["follower_count"] > a["follower_count"]:
             score += 1
@@ -31,10 +30,10 @@ def compare(a, b, score):
             return score, b
         else:
             print(f"Sorry, that's wrong. Final score: {score}")
-            return False
+            return sys.exit()
     else:
         print(f"Sorry, that's wrong. Final score: {score}")
-        return False
+        return sys.exit()
 
 
 def game():
@@ -46,16 +45,27 @@ def game():
     b = get_data()
 
     score, a = compare(a, b, score)
+
+    name = a["name"]
+    description = a["description"]
+    country = a["country"]
+
+    print(f"{name}, a {description}, from {country}")
+    print(vs)
     b = get_data()
 
     while score:
         score, a = compare(a, b, score)
+
+        name = a["name"]
+        description = a["description"]
+        country = a["country"]
+
+        print(f"{name}, a {description}, from {country}")
+        print(vs)
         b = get_data()
 
     return score
 
-print("mały test zmian :))")
+
 print(game())
-
-
-#Need to fix that code, there are several issues
