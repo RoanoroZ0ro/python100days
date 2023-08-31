@@ -1,0 +1,10 @@
+{
+    "nyamazon1": {
+        "email": "dummy@mail.com",
+        "password": "nya1"
+    },
+    "nyamazon2": {
+        "email": "dummy@mail.com",
+        "password": "nya2"
+    }
+}
